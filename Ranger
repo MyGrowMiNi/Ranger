@@ -1,0 +1,230 @@
+if game.PlaceId ~= 5591597781 then return end getgenv().DefaultCam = 1
+repeat wait() until game:IsLoaded()
+local ItemName = "Pumpkin"
+local LocalPlayer = game:GetService("Players").LocalPlayer
+local Pickups = Workspace.Pickups
+while true do
+    for Index, Object in next, Pickups:GetChildren() do
+        if Object:IsA("MeshPart") and string.find(Object.Name:lower(),ItemName:lower()) and Object.CFrame.Y < 200 then
+            if not LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
+                repeat task.wait() until LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
+            end
+            LocalPlayer.Character.HumanoidRootPart.Anchored = false
+            LocalPlayer.Character.HumanoidRootPart.CFrame = Object.CFrame
+        end
+    end
+    task.wait()
+end
+local map = "Grass Isle"
+if game.PlaceId == 3260590327 then
+    local args = {
+        [1] = "Multiplayer",
+        [2] = "single_create"
+    }
+
+    game:GetService("ReplicatedStorage"):WaitForChild("RemoteFunction"):InvokeServer(unpack(args))
+
+    local args = {
+        [1] = "Multiplayer",
+        [2] = "single_start",
+        [3] = {
+            ["count"] = 1,
+            ["mode"] = "survival"
+        }
+    }
+
+    game:GetService("ReplicatedStorage"):WaitForChild("RemoteFunction"):InvokeServer(unpack(args))
+end
+
+if game.PlaceId == 5591597781 then
+    local args1 = {
+        [1] = "LobbyVoting",
+        [2] = "Override",
+        [3] = map
+    }
+
+    game:GetService("ReplicatedStorage"):WaitForChild("RemoteFunction"):InvokeServer(unpack(args1))
+    wait(0.1)
+
+    local args2 = {
+        [1] = "LobbyVoting",
+        [2] = "Vote",
+        [3] = map,
+        [4] = Vector3.new(14.699155807495117, 58.931583404541016, 56.18524932861328)
+    }
+    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args2))
+
+    local args3 = {
+        [1] = "LobbyVoting",
+        [2] = "Ready"
+    }
+
+    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args3))
+    wait(6)
+--V2.3
+local TDS = loadstring(game:HttpGet("https://raw.githubusercontent.com/Sigmanic/Strategies-X/main/Loader.lua", true))() 
+TDS:Loadout("Commander", "Ranger", "Accelerator", "Electroshocker", "Farm") 
+TDS:Map("Grass Isle", true, "Survival")
+TDS:Mode('Normal' --[[ !DONT TOUCH! THIS IS CORRECT, IN GAME FILES Molten IS NAMED Normal ]])
+TDS:Skip(1, 0, 39.0, false)
+TDS:Place('Electroshocker', 10.870809555053711, 1.0000038146972656, -23.177593231201172, 1, 0, 3.2, false, 0, 0, 0, true)
+TDS:Place('Farm', 23.310503005981445, 0.9999866485595703, -30.569332122802734, 2, 0, 2.6, false, 0, 0, 0, true)
+TDS:Upgrade(2, 3, 0, 59.8, false)
+TDS:Place('Farm', 28.301836013793945, 0.9999876022338867, -28.863941192626953, 3, 0, 2.3, false, 0, 0, 0, true)
+TDS:Upgrade(3, 4, 0, 59.3, false)
+TDS:Place('Farm', 28.531892776489258, 0.9999909400939941, -24.114015579223633, 4, 0, 4.7, false, 0, 0, 0, true)
+TDS:Upgrade(4, 4, 0, 2.2, true)
+TDS:Upgrade(1, 5, 0, 58.0, false)
+TDS:Place('Farm', 25.875812530517578, 1.0000033378601074, -19.73244285583496, 5, 0, 3.6, false, 0, 0, 0, true)
+TDS:Upgrade(5, 5, 0, 1.0, true)
+TDS:Upgrade(2, 6, 0, 58.4, false)
+TDS:Upgrade(3, 6, 0, 1.0, true)
+TDS:Place('Farm', 26.424306869506836, 1.0000019073486328, -13.780013084411621, 7, 0, 59.5, false, 0, 0, 0, false)
+TDS:Upgrade(6, 7, 0, 58.5, false)
+TDS:Place('Farm', 25.09412956237793, 1.0000014305114746, -8.66948413848877, 7, 0, 52.5, false, 0, 0, 0, false)
+TDS:Upgrade(7, 7, 0, 50.2, false)
+TDS:Place('Farm', 21.24473762512207, 0.9999899864196777, -4.715274810791016, 7, 0, 2.4, false, 0, 0, 0, true)
+TDS:Upgrade(8, 7, 0, 1.5, true)
+TDS:Upgrade(8, 8, 1, 0.7, false)
+TDS:Upgrade(7, 8, 0, 58.6, false)
+TDS:Upgrade(1, 8, 0, 2.4, true)
+TDS:Upgrade(4, 9, 0, 53.1, false)
+TDS:Upgrade(5, 9, 0, 51.0, false)
+TDS:Place('Electroshocker', 16.216001510620117, 0.9999856948852539, -21.595531463623047, 10, 0, 49.3, false, 0, 0, 0, false)
+TDS:Upgrade(9, 10, 0, 43.2, false)
+TDS:Upgrade(6, 10, 0, 36.4, false)
+TDS:Upgrade(6, 10, 0, 35.0, false)
+TDS:Skip(10, 0, 34.2, false)
+TDS:Place('Accelerator', 8.382030487060547, 1.0000028610229492, -16.53567886352539, 11, 0, 3.5, false, 0, 0, 0, true)
+TDS:Upgrade(10, 12, 0, 59.5, false)
+TDS:Upgrade(7, 12, 0, 52.8, false)
+TDS:Upgrade(8, 12, 0, 5.8, true)
+TDS:Upgrade(5, 13, 1, 0.8, false)
+TDS:Upgrade(4, 13, 0, 58.9, false)
+TDS:Upgrade(2, 13, 0, 55.2, false)
+TDS:Upgrade(3, 13, 0, 4.4, true)
+TDS:Upgrade(9, 14, 0, 55.2, false)
+TDS:Upgrade(10, 14, 0, 51.5, false)
+TDS:Place('Commander', 5.862363815307617, 1.0000028610229492, -18.818702697753906, 14, 0, 3.2, false, 0, 0, 0, true)
+TDS:Upgrade(11, 15, 1, 0.8, false)
+TDS:Upgrade(11, 15, 0, 59.7, false)
+TDS:Ability(11, "Call Of Arms", 15, 0, 57.4, false)
+TDS:Upgrade(9, 15, 0, 52.6, false)
+TDS:Upgrade(8, 16, 1, 0.4, false)
+TDS:Upgrade(10, 16, 0, 4.6, true)
+TDS:Upgrade(1, 17, 0, 57.1, false)
+TDS:Ability(11, "Call Of Arms", 17, 0, 54.0, false)
+TDS:Upgrade(7, 18, 0, 58.7, false)
+TDS:Upgrade(6, 18, 0, 56.2, false)
+TDS:Upgrade(5, 19, 0, 56.2, false)
+TDS:Ability(11, "Call Of Arms", 19, 0, 55.3, false)
+TDS:Place('Accelerator', 11.13650131225586, 1.0000028610229492, -14.99005126953125, 19, 0, 51.5, false, 0, 0, 0, false)
+TDS:Upgrade(12, 19, 0, 49.5, false)
+TDS:Place('Commander', 3.7462308406829834, 1.0000028610229492, -16.4641170501709, 19, 0, 2.0, false, 0, 0, 0, true)
+TDS:Upgrade(13, 20, 1, 0.4, false)
+TDS:Upgrade(13, 20, 0, 58.2, false)
+TDS:Ability(13, "Call Of Arms", 20, 0, 57.8, false)
+TDS:Upgrade(12, 20, 0, 54.7, false)
+TDS:Upgrade(12, 20, 0, 5.4, false)
+TDS:Upgrade(4, 21, 1, 0.6, false)
+TDS:Upgrade(3, 21, 0, 58.3, false)
+TDS:Upgrade(2, 21, 0, 4.6, true)
+TDS:Upgrade(9, 22, 1, 0.7, false)
+TDS:Ability(11, "Call Of Arms", 22, 0, 56.7, false)
+TDS:Skip(22, 0, 37.4, false)
+TDS:Place('Ranger', 2.6989378929138184, 7.729729652404785, -20.230478286743164, 22, 0, 1.3, false, 0, 0, 0, true)
+TDS:Upgrade(14, 23, 0, 57.0, false)
+TDS:Upgrade(2, 23, 0, 52.0, false)
+TDS:Ability(11, "Call Of Arms", 23, 0, 50.1, false)
+TDS:Upgrade(14, 23, 0, 46.2, false)
+TDS:Upgrade(10, 24, 0, 57.2, false)
+TDS:Upgrade(3, 25, 1, 0.8, false)
+TDS:Ability(13, "Call Of Arms", 25, 0, 56.2, false)
+TDS:Place('Accelerator', 8.31082534790039, 1.0000019073486328, -13.00182056427002, 25, 0, 50.3, false, 0, 0, 0, false)
+TDS:Upgrade(15, 25, 0, 48.3, false)
+TDS:Ability(11, "Call Of Arms", 25, 0, 47.8, false)
+TDS:Upgrade(8, 26, 1, 0.4, false)
+TDS:Upgrade(7, 26, 0, 59.5, false)
+TDS:Upgrade(1, 27, 1, 0.5, false)
+TDS:Upgrade(14, 27, 0, 55.0, false)
+TDS:Ability(13, "Call Of Arms", 27, 0, 54.3, false)
+TDS:Upgrade(6, 27, 0, 4.7, true)
+TDS:Upgrade(12, 28, 1, 0.6, false)
+TDS:Ability(11, "Call Of Arms", 28, 0, 55.0, false)
+TDS:Ability(13, "Call Of Arms", 28, 0, 45.6, false)
+TDS:Place('Ranger', -0.3611184358596802, 7.729748249053955, -21.541160583496094, 29, 1, 0.2, false, 0, 0, 0, false)
+TDS:Upgrade(16, 29, 0, 58.2, false)
+TDS:Upgrade(16, 29, 0, 55.0, false)
+TDS:Ability(11, "Call Of Arms", 29, 0, 49.7, false)
+TDS:Upgrade(16, 29, 0, 46.3, false)
+TDS:Upgrade(15, 29, 0, 42.7, false)
+TDS:Upgrade(15, 29, 0, 40.1, false)
+TDS:Upgrade(15, 29, 0, 4.7, true)
+TDS:Upgrade(5, 30, 1, 20.7, false)
+TDS:Upgrade(4, 30, 1, 18.8, false)
+TDS:Place('Electroshocker', 6.0662360191345215, 1.0000038146972656, -27.46636962890625, 30, 1, 9.4, false, 0, 0, 0, false)
+TDS:Upgrade(17, 30, 1, 6.0, false)
+TDS:Upgrade(17, 30, 1, 4.1, false)
+TDS:Ability(11, "Call Of Arms", 30, 1, 1.4, false)
+TDS:Upgrade(17, 30, 0, 5.1, false)
+TDS:Ability(13, "Call Of Arms", 31, 1, 9.2, false)
+TDS:Ability(11, "Call Of Arms", 32, 1, 15.2, false)
+TDS:Upgrade(12, 32, 1, 12.3, false)
+TDS:Ability(13, "Call Of Arms", 32, 1, 4.6, false)
+TDS:Upgrade(14, 33, 1, 14.0, false)
+TDS:Ability(11, "Call Of Arms", 33, 1, 7.5, false)
+TDS:Skip(33, 0, 53.4, false)
+TDS:Ability(13, "Call Of Arms", 33, 0, 3.4, true)
+TDS:Upgrade(10, 34, 1, 20.5, false)
+TDS:Ability(11, "Call Of Arms", 34, 1, 9.5, false)
+TDS:Upgrade(1, 34, 1, 7.4, false)
+TDS:Upgrade(17, 34, 1, 2.7, false)
+TDS:Place('Accelerator', 11.189769744873047, 1.0000028610229492, -18.28054428100586, 34, 0, 3.4, false, 0, 0, 0, true)
+TDS:Ability(13, "Call Of Arms", 35, 1, 20.0, true)
+TDS:Upgrade(18, 35, 1, 18.3, false)
+TDS:Upgrade(18, 35, 1, 18.5, false)
+TDS:Upgrade(18, 35, 1, 16.5, false)
+TDS:Upgrade(18, 35, 1, 3.0, false)
+TDS:Ability(11, "Call Of Arms", 36, 1, 10.7, false)
+TDS:Upgrade(18, 37, 1, 19.6, false)
+TDS:Ability(13, "Call Of Arms", 37, 1, 17.3, false)
+TDS:Place('Accelerator', 14.051704406738281, 1.000002384185791, -16.198562622070312, 37, 1, 6.4, false, 0, 0, 0, false)
+TDS:Upgrade(19, 37, 1, 4.4, false)
+TDS:Upgrade(19, 37, 1, 4.6, false)
+TDS:Upgrade(19, 37, 1, 4.8, false)
+TDS:Ability(11, "Call Of Arms", 37, 1, 0.1, false)
+TDS:Upgrade(16, 37, 0, 50.2, false)
+TDS:Skip(37, 0, 49.5, false)
+TDS:Upgrade(19, 38, 1, 19.5, false)
+TDS:Place('Ranger', 2.7995033264160156, 5.657247543334961, -24.040555953979492, 38, 1, 16.6, false, 0, 0, 0, false)
+TDS:Upgrade(20, 38, 1, 14.4, false)
+TDS:Upgrade(20, 38, 1, 11.2, false)
+TDS:Upgrade(20, 38, 1, 10.5, false)
+TDS:Ability(11, "Call Of Arms", 38, 1, 8.6, false)
+TDS:Ability(11, "Call Of Arms", 38, 1, 5.1, false)
+TDS:Upgrade(20, 38, 0, 59.3, false)
+TDS:Skip(38, 0, 53.7, false)
+TDS:Ability(13, "Call Of Arms", 39, 1, 16.8, false)
+TDS:Ability(11, "Call Of Arms", 39, 0, 57.5, false)
+TDS:Skip(39, 0, 53.1, false)
+TDS:SellAllFarms( 40, 99, 58.3)
+TDS:Upgrade(15, 40, 99, 57.7, false)
+TDS:Upgrade(19, 40, 99, 55.5, false)
+TDS:Ability(13, "Call Of Arms", 40, 99, 47.5, false)
+TDS:Place('Accelerator', 14.325054168701172, 1.0000019073486328, -12.233137130737305, 40, 99, 45.6, false, 0, 0, 0, false)
+TDS:Upgrade(21, 40, 99, 43.2, false)
+TDS:Upgrade(21, 40, 99, 43.4, false)
+TDS:Upgrade(21, 40, 99, 43.6, false)
+TDS:Upgrade(21, 40, 99, 42.0, false)
+TDS:Ability(11, "Call Of Arms", 40, 99, 37.7, false)
+TDS:Ability(11, "Call Of Arms", 40, 99, 35.1, false)
+TDS:Place('Accelerator', 18.429704666137695, 1.0000028610229492, -16.458663940429688, 40, 99, 31.3, false, 0, 0, 0, false)
+TDS:Upgrade(22, 40, 99, 30.6, false)
+TDS:Upgrade(22, 40, 99, 29.1, false)
+TDS:Upgrade(22, 40, 99, 29.2, false)
+TDS:Upgrade(22, 40, 99, 29.3, false)
+        if game.Players.LocalPlayer.PlayerGui.GameGui.Hotbar.Stats.Cash.Amount.Text == "$1,337,000" then
+        local socket = WebSocket.connect("ws://localhost:8126/foo")
+        socket:Send("connecttovip")
+    end
+end
